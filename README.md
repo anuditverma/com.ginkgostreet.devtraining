@@ -10,4 +10,4 @@ CiviCRM 4.5+
 Credits
 -------
 
-Contributors: Frank J. Gómez, Maggie Epps
+Contributors: Frank J. Gómez, Maggie Epps, Kevin Cristiano
