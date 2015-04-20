@@ -131,7 +131,7 @@ function _devtraining_civicrm_post_Address($op, $objectName, $objectId, &$object
     $objectRef->contact_id
     && in_array($op, array('edit', 'create'))
   ) {
-    $county = _devtraining_fetch_county_by_postal_code($objectRef->postal_code);
+    $county = _devtrainingFetchCountyByPostalCode($objectRef->postal_code);
 
     if ($county) {
       // look up the custom id for the county field
@@ -158,7 +158,7 @@ function _devtraining_civicrm_post_Address($op, $objectName, $objectId, &$object
  * @param string $postal_code
  * @return mixed Boolean FALSE on error, county name as string on success
  */
-function _devtraining_fetch_county_by_postal_code($postal_code) {
+function _devtrainingFetchCountyByPostalCode($postal_code) {
   $result = FALSE;
 
   $zipwise_api_key = CRM_Core_BAO_Setting::getItem('com.ginkgostreet.devtraining', 'zipwise_api_key');

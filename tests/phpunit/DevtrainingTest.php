@@ -10,7 +10,7 @@ class DevtrainingTest extends CiviUnitTestCase {
    * Test that, given a valid postal code, the fetcher returns the correct county
    */
   function testFetchPostalCodeSuccess() {
-    $county = _devtraining_fetch_county_by_postal_code('33629');
+    $county = _devtrainingFetchCountyByPostalCode('33629');
     $this->assertEquals('Hillsborough', $county);
   }
 
@@ -18,7 +18,7 @@ class DevtrainingTest extends CiviUnitTestCase {
    * Test that, given an invalid postal code, the fetch returns boolean false
    */
   function testFetchPostalCodeFailure() {
-    $county = _devtraining_fetch_county_by_postal_code('POPSICLE');
+    $county = _devtrainingFetchCountyByPostalCode('POPSICLE');
     // note: assertSame does a strict comparison (i.e., ===) while assertEquals checks values only
     $this->assertSame(FALSE, $county);
   }
